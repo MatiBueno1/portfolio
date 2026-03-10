@@ -209,7 +209,7 @@ const Nav = ({ lang, setLang, tx }) => {
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 50,
       display: "flex", justifyContent: "space-between", alignItems: "center",
-      padding: "0 48px", height: 64,
+      padding: "0 24px", height: 60,
       background: scrolled ? "rgba(5,5,10,0.9)" : "transparent",
       backdropFilter: scrolled ? "blur(20px)" : "none",
       borderBottom: scrolled ? "1px solid rgba(255,255,255,0.04)" : "none",
@@ -220,21 +220,23 @@ const Nav = ({ lang, setLang, tx }) => {
         fontFamily: "monospace", fontSize: "13px", color: "#6366f1", letterSpacing: ".15em"
       }}>mb.dev</button>
 
-      <div style={{ display: "flex", gap: 28, alignItems: "center" }}>
-        {tx.nav.map((label, i) => (
-          <button key={label} onClick={() => scrollTo(tx.navIds[i])} style={{
-            background: "none", border: "none", color: "#555", fontSize: "12px",
-            cursor: "pointer", letterSpacing: ".06em", transition: "color .2s",
-            textTransform: "uppercase", fontFamily: "monospace"
-          }}
-            onMouseEnter={e => e.target.style.color = "#e0e0e0"}
-            onMouseLeave={e => e.target.style.color = "#555"}
-          >{label}</button>
-        ))}
-        <div style={{ display: "flex", gap: 3, paddingLeft: 20, borderLeft: "1px solid #1a1a1a" }}>
+      <div style={{ display: "flex", gap: 16, alignItems: "center" }}>
+        <div className="nav-links" style={{ display: "flex", gap: 20, alignItems: "center" }}>
+          {tx.nav.map((label, i) => (
+            <button key={label} onClick={() => scrollTo(tx.navIds[i])} style={{
+              background: "none", border: "none", color: "#555", fontSize: "12px",
+              cursor: "pointer", letterSpacing: ".06em", transition: "color .2s",
+              textTransform: "uppercase", fontFamily: "monospace"
+            }}
+              onMouseEnter={e => e.target.style.color = "#e0e0e0"}
+              onMouseLeave={e => e.target.style.color = "#555"}
+            >{label}</button>
+          ))}
+        </div>
+        <div style={{ display: "flex", gap: 3, paddingLeft: 12, borderLeft: "1px solid #1a1a1a" }}>
           {["es","en","pt"].map(l => (
             <button key={l} onClick={() => setLang(l)} style={{
-              padding: "3px 9px", borderRadius: 4, fontSize: "11px",
+              padding: "3px 8px", borderRadius: 4, fontSize: "11px",
               fontFamily: "monospace", fontWeight: 700, letterSpacing: ".06em",
               textTransform: "uppercase", cursor: "pointer", transition: "all .2s",
               background: lang === l ? "#6366f1" : "none",
@@ -265,7 +267,7 @@ const Hero = ({ tx }) => {
   return (
     <section id="hero" style={{
       minHeight: "100vh", display: "flex", alignItems: "center",
-      padding: "0 48px", position: "relative", overflow: "hidden"
+      padding: "80px 24px 60px", position: "relative", overflow: "hidden"
     }}>
       {/* Big decorative background text */}
       <div style={{
@@ -364,7 +366,7 @@ const Hero = ({ tx }) => {
 
 // ─── Section wrapper ──────────────────────────────────────────────────────────
 const Section = ({ id, children }) => (
-  <section id={id} style={{ padding: "100px 48px", maxWidth: 1000, margin: "0 auto" }}>
+  <section id={id} style={{ padding: "80px 24px", maxWidth: 1000, margin: "0 auto" }}>
     {children}
   </section>
 );
@@ -387,7 +389,7 @@ const SectionTitle = ({ children }) => (
 // ─── About ────────────────────────────────────────────────────────────────────
 const About = ({ tx }) => (
   <Section id="about">
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 48, alignItems: "start" }}>
       <div>
         <FadeUp><SectionLabel>{tx.aboutTag}</SectionLabel></FadeUp>
         <FadeUp delay={.1}><SectionTitle>{tx.aboutTitle}</SectionTitle></FadeUp>
@@ -421,7 +423,7 @@ const About = ({ tx }) => (
 const Projects = ({ tx }) => (
   <Section id="projects">
     <FadeUp><SectionLabel>{tx.projectsTag}</SectionLabel></FadeUp>
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20 }}>
       {tx.projects.map((p, i) => {
         const [hov, setHov] = useState(false);
         return (
@@ -478,7 +480,7 @@ const Projects = ({ tx }) => (
 const Studies = ({ tx }) => (
   <Section id="studies">
     <FadeUp><SectionLabel>{tx.studiesTag}</SectionLabel></FadeUp>
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
+    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: 16 }}>
       {tx.timeline.map((item, i) => (
         <FadeUp key={i} delay={i * .1}>
           <div style={{
@@ -543,7 +545,7 @@ const Contact = ({ tx }) => {
 
   return (
     <Section id="contact">
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "start" }}>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 48, alignItems: "start" }}>
         <div>
           <FadeUp><SectionLabel>{tx.contactTag}</SectionLabel></FadeUp>
           <FadeUp delay={.1}><SectionTitle>{tx.contactTitle}</SectionTitle></FadeUp>
@@ -618,8 +620,9 @@ const Contact = ({ tx }) => {
 // ─── Footer ───────────────────────────────────────────────────────────────────
 const Footer = ({ tx }) => (
   <footer style={{
-    borderTop: "1px solid #0f0f14", padding: "24px 48px",
-    display: "flex", justifyContent: "space-between", alignItems: "center"
+    borderTop: "1px solid #0f0f14", padding: "24px",
+    display: "flex", justifyContent: "space-between", alignItems: "center",
+    flexWrap: "wrap", gap: 12
   }}>
     <span style={{ fontFamily: "monospace", fontSize: "12px", color: "#222" }}>{tx.footerLeft}</span>
     <div style={{ display: "flex", gap: 20 }}>
@@ -663,6 +666,9 @@ export default function App() {
         @keyframes scrollLine {
           0%,100% { opacity: 0; transform: scaleY(0); transform-origin: top; }
           50%      { opacity: 1; transform: scaleY(1); }
+        }
+        @media (max-width: 640px) {
+          .nav-links { display: none !important; }
         }
       `}</style>
       <Nav lang={lang} setLang={setLang} tx={tx} />

@@ -258,7 +258,7 @@ const Hero = ({ tx }) => {
       setTyped(tx.heroRole.slice(0, i));
       i++;
       if (i > tx.heroRole.length) clearInterval(iv);
-    }, 60);
+    }, 120);
     return () => clearInterval(iv);
   }, [tx.heroRole]);
 
@@ -438,14 +438,7 @@ const Projects = ({ tx }) => (
                 boxShadow: hov ? "0 0 40px rgba(99,102,241,0.05)" : "none"
               }}
             >
-              {p.highlight && (
-                <span style={{
-                  position: "absolute", top: 18, right: 18,
-                  padding: "3px 10px", borderRadius: 999, fontSize: "10px",
-                  color: "#6366f1", fontFamily: "monospace", letterSpacing: ".1em",
-                  background: "rgba(99,102,241,0.08)", border: "1px solid rgba(99,102,241,0.15)"
-                }}>FEATURED</span>
-              )}
+
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 16 }}>
                 <span style={{ fontFamily: "monospace", fontSize: "10px", color: "#2a2a2a", letterSpacing: ".1em" }}>{p.num}</span>
                 <span style={{ fontFamily: "monospace", fontSize: "11px", color: "#333" }}>{p.year}</span>
@@ -672,7 +665,6 @@ export default function App() {
           50%      { opacity: 1; transform: scaleY(1); }
         }
       `}</style>
-      <CursorGlow />
       <Nav lang={lang} setLang={setLang} tx={tx} />
       <Hero tx={tx} />
       <About tx={tx} />

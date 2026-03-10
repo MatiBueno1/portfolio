@@ -14,7 +14,7 @@ const t = {
     heroGreet: "Hola, soy",
     heroName: "Matias Bueno",
     heroRole: "Software Developer",
-    heroSub: "Lógica. Código. Soluciones.",
+    heroSub: "Apasionado por construir soluciones reales.",
     heroLocation: "Rosario, Argentina",
     heroCta1: "Ver Proyectos",
     heroCta2: "Contactarme",
@@ -56,7 +56,7 @@ const t = {
     heroGreet: "Hi, I'm",
     heroName: "Matias Bueno",
     heroRole: "Software Developer",
-    heroSub: "Logic. Code. Solutions.",
+    heroSub: "Passionate about building real solutions.",
     heroLocation: "Rosario, Argentina",
     heroCta1: "View Projects",
     heroCta2: "Get in touch",
@@ -98,7 +98,7 @@ const t = {
     heroGreet: "Olá, sou",
     heroName: "Matias Bueno",
     heroRole: "Software Developer",
-    heroSub: "Lógica. Código. Soluções.",
+    heroSub: "Apaixonado por construir soluções reais.",
     heroLocation: "Rosario, Argentina",
     heroCta1: "Ver Projetos",
     heroCta2: "Entrar em contato",
@@ -240,7 +240,7 @@ const Nav = ({ lang, setLang, tx }) => {
               fontFamily: "monospace", fontWeight: 700, letterSpacing: ".06em",
               textTransform: "uppercase", cursor: "pointer", transition: "all .2s",
               background: lang === l ? "#6366f1" : "none",
-              color: lang === l ? "#fff" : "#444",
+              color: lang === l ? "#fff" : "#777",
               border: lang === l ? "none" : "1px solid #222",
             }}>{l}</button>
           ))}
@@ -275,7 +275,7 @@ const Hero = ({ tx }) => {
         fontSize: "clamp(120px, 18vw, 260px)", fontWeight: 900,
         color: "transparent", WebkitTextStroke: "1px rgba(99,102,241,0.07)",
         lineHeight: 1, userSelect: "none", pointerEvents: "none",
-        fontFamily: "'Syne', sans-serif", letterSpacing: "-0.05em", whiteSpace: "nowrap"
+        fontFamily: "'Playfair Display', serif", letterSpacing: "-0.05em", whiteSpace: "nowrap"
       }}>DEV</div>
 
       <div style={{ maxWidth: 680, position: "relative", zIndex: 1 }}>
@@ -301,7 +301,7 @@ const Hero = ({ tx }) => {
           <h1 style={{
             fontSize: "clamp(52px, 8vw, 88px)", fontWeight: 800,
             color: "#f0f0f0", letterSpacing: "-0.04em", lineHeight: 1,
-            fontFamily: "'Syne', sans-serif", marginBottom: 8
+            fontFamily: "'Playfair Display', serif", marginBottom: 8
           }}>{tx.heroName}</h1>
         </div>
 
@@ -373,8 +373,8 @@ const Section = ({ id, children }) => (
 
 const SectionLabel = ({ children }) => (
   <p style={{
-    fontFamily: "monospace", fontSize: "11px", color: "#6366f1",
-    letterSpacing: ".18em", marginBottom: 20, textTransform: "uppercase"
+    fontFamily: "monospace", fontSize: "12px", color: "#818cf8",
+    letterSpacing: ".18em", marginBottom: 20, textTransform: "uppercase", fontWeight: 700
   }}>{children}</p>
 );
 
@@ -382,7 +382,7 @@ const SectionTitle = ({ children }) => (
   <h2 style={{
     fontSize: "clamp(32px, 5vw, 48px)", fontWeight: 800,
     color: "#ececec", letterSpacing: "-0.03em", lineHeight: 1.1,
-    fontFamily: "'Syne', sans-serif", marginBottom: 56, whiteSpace: "pre-line"
+    fontFamily: "'Playfair Display', serif", marginBottom: 56, whiteSpace: "pre-line"
   }}>{children}</h2>
 );
 
@@ -397,7 +397,7 @@ const About = ({ tx }) => (
         <FadeUp delay={.2}><p style={{ color: "#484848", lineHeight: 1.9, fontSize: 15 }}>{tx.aboutP2}</p></FadeUp>
       </div>
       <FadeUp delay={.2}>
-        <p style={{ fontFamily: "monospace", fontSize: "10px", color: "#333", letterSpacing: ".14em", marginBottom: 24 }}>{tx.skillsTitle}</p>
+        <p style={{ fontFamily: "monospace", fontSize: "11px", color: "#818cf8", letterSpacing: ".14em", marginBottom: 24, fontWeight: 700 }}>{tx.skillsTitle}</p>
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
           {skills.map(s => (
             <div key={s.name} style={{
@@ -445,7 +445,7 @@ const Projects = ({ tx }) => (
                 <span style={{ fontFamily: "monospace", fontSize: "10px", color: "#2a2a2a", letterSpacing: ".1em" }}>{p.num}</span>
                 <span style={{ fontFamily: "monospace", fontSize: "11px", color: "#333" }}>{p.year}</span>
               </div>
-              <h3 style={{ fontSize: 18, fontWeight: 700, color: "#ddd", marginBottom: 10, fontFamily: "'Syne', sans-serif", letterSpacing: "-.01em" }}>{p.title}</h3>
+              <h3 style={{ fontSize: 18, fontWeight: 700, color: "#ddd", marginBottom: 10, fontFamily: "'Playfair Display', serif", letterSpacing: "-.01em" }}>{p.title}</h3>
               <p style={{ color: "#444", fontSize: 14, lineHeight: 1.75, marginBottom: 20, flexGrow: 1 }}>{p.desc}</p>
               <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginBottom: 20 }}>
                 {p.tags.map(tag => (
@@ -497,7 +497,7 @@ const Studies = ({ tx }) => (
               fontFamily: "monospace", fontSize: "11px", color: "#6366f1",
               marginBottom: 18, whiteSpace: "pre-line", lineHeight: 1.4
             }}>{item.year}</div>
-            <h3 style={{ fontSize: 16, fontWeight: 700, color: "#d0d0d0", marginBottom: 6, fontFamily: "'Syne', sans-serif" }}>{item.title}</h3>
+            <h3 style={{ fontSize: 16, fontWeight: 700, color: "#d0d0d0", marginBottom: 6, fontFamily: "'Playfair Display', serif" }}>{item.title}</h3>
             <p style={{ fontSize: 12, color: "#6366f1", marginBottom: 12, fontFamily: "monospace", letterSpacing: ".04em" }}>{item.org}</p>
             <p style={{ fontSize: 13, color: "#444", lineHeight: 1.7 }}>{item.desc}</p>
           </div>
@@ -557,7 +557,7 @@ const Contact = ({ tx }) => {
                 { label: tx.labelLocation, val: <span style={{ color: "#444", fontSize: 14 }}>{tx.location}</span> },
               ].map(({ label, val }) => (
                 <div key={label} style={{ display: "flex", gap: 16, alignItems: "center" }}>
-                  <span style={{ fontFamily: "monospace", fontSize: "10px", color: "#2a2a2a", letterSpacing: ".12em", minWidth: 80 }}>{label}</span>
+                  <span style={{ fontFamily: "monospace", fontSize: "10px", color: "#818cf8", letterSpacing: ".12em", minWidth: 80, fontWeight: 700 }}>{label}</span>
                   {val}
                 </div>
               ))}
@@ -646,16 +646,16 @@ export default function App() {
   return (
     <>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Sans:wght@300;400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { background: #05050a; color: #e0e0e0; -webkit-font-smoothing: antialiased; font-family: 'DM Sans', sans-serif; }
-        h1,h2,h3 { font-family: 'Syne', sans-serif; }
+        h1,h2,h3 { font-family: 'Playfair Display', serif; }
         ::selection { background: rgba(99,102,241,0.25); }
         ::-webkit-scrollbar { width: 3px; }
         ::-webkit-scrollbar-track { background: #05050a; }
         ::-webkit-scrollbar-thumb { background: #6366f1; border-radius: 2px; }
-        input::placeholder, textarea::placeholder { color: #2a2a2a; }
+        input::placeholder, textarea::placeholder { color: #555; }
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }

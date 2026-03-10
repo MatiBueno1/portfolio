@@ -1,30 +1,35 @@
-# Matias Bueno — Portfolio
+# Matias Bueno — Portfolio Personal
 
-## Cómo correrlo localmente
+Portfolio personal desarrollado con React y Vite. Soporte multiidioma (ES / EN / PT).
 
-```bash
-npm install
-npm run dev
-```
-
-## Variables de entorno
-
-Crear un archivo `.env` en la raíz con:
-
-```
-VITE_EMAILJS_SERVICE_ID=service_llsue5y
-VITE_EMAILJS_TEMPLATE_ID=template_mwumigd
-VITE_EMAILJS_PUBLIC_KEY=1p3uLuID7GIyEr60h
-```
-
-## Deploy en Vercel
-
-1. Subí el proyecto a GitHub (sin el `.env`)
-2. Entrá a vercel.com → New Project → importá el repo
-3. En **Environment Variables** agregá las 3 variables del `.env`
-4. Click en Deploy — listo
+🌐 **Live:** [matias-bueno.vercel.app](https://matias-bueno.vercel.app)
+---
 
 ## Stack
-- React 19 + Vite
-- EmailJS para el formulario de contacto
-- Sin dependencias de UI externas
+
+| Tecnología | Uso |
+|---|---|
+| **React 19** | UI y componentes |
+| **Vite 6** | Bundler y dev server |
+| **EmailJS** | Envío real de emails desde el formulario de contacto |
+| **Google Fonts** | Tipografías Syne + DM Sans |
+
+Sin librerías de UI externas — todo el diseño está hecho con CSS-in-JS puro.
+
+---
+
+## Funcionalidades
+
+- **Multiidioma** — Español, Inglés y Portugués con un click, sin recarga de página
+- **Typewriter** — El rol se escribe letra a letra en el hero
+- **Scroll animations** — Cada sección aparece con fade al entrar en viewport
+- **Formulario real** — Los mensajes llegan directo al email via EmailJS
+- **Responsive** — Adaptado para mobile y desktop
+
+---
+
+## Contacto
+
+**Matias Bueno** — [matiasbueno0101@gmail.com](mailto:matiasbueno0101@gmail.com)  
+LinkedIn: [linkedin.com/in/matias-daniel-bueno](https://www.linkedin.com/in/matias-daniel-bueno/)  
+GitHub: [github.com/MatiBueno1](https://github.com/MatiBueno1)
